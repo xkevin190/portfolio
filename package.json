@@ -68,5 +68,9 @@
     "webpack-dev-server": "^3.11.2",
     "webpack-merge": "^5.7.3"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "styled-components": "^5.2.1",
+    "styled-icons": "^10.27.0"
+  }
 }
