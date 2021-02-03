@@ -7,11 +7,50 @@ import { Twitter } from '@styled-icons/bootstrap/Twitter'
 import { Github } from '@styled-icons/bootstrap/Github'
 import { LinkedinSquare } from '@styled-icons/boxicons-logos/LinkedinSquare'
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      active: true,
+      button: 1
+    };
+  }
+
+  componentDidMount = () => {
+    setTimeout(() => {
+      this.setState({
+        active: false
+      })
+    }, 100)
+  }
+
+
+  setMenuOptions = (num) => {
+    console.log('in the funcion', num);
+    this.setState({
+      button: num,
+      active: true
+    })
+  }
+
+
+  componentDidUpdate = (prevProps, prevState) => {
+    if (this.state.button !== prevState.button) {
+      setTimeout(() => {
+        this.setState({
+          active: false
+        })
+      }, 500)
+    }
+  }
+
+
+
+
   render() {
     return (
       <AppContainer>
         <MenuBar style={{ color: 'white' }}>
-          <Menu />
+          <Menu setMenuOptions={this.setMenuOptions} button={this.state.button} />
         </MenuBar>
         <CardInfo style={{ color: 'white' }}>
           <div id='conten-profile'>
@@ -24,7 +63,19 @@ class App extends React.Component {
             </div>
           </div>
         </CardInfo>
-        <BodyCard style={{ color: 'white' }}>component3</BodyCard>
+        <BodyCard active={this.state.active} >
+          <div id="inside-body">
+            hello word
+          </div>
+        </BodyCard>
+        <div style={{
+          background: '#0A0000',
+          position: "absolute",
+          zIndex: 2,
+          width: '50vh',
+          height: '100vh',
+          left: '0vh'
+        }} />
       </AppContainer>
     );
   }
@@ -48,6 +99,7 @@ const MenuBar = styled.div`
     display: flex;
     align-items:center;
     justify-content:space-between;
+    z-index:3;
 `
 
 const CardInfo = styled.div`
@@ -86,13 +138,19 @@ const CardInfo = styled.div`
         padding-right:10px;
       }
 
-`
+`;
 
 const BodyCard = styled.div`
-    flex:2;
-    background-color: #1B1E20;
+    flex: 2;
     height:75vh;
-    transition: width 2s;
-`
+
+    #inside-body {
+      height:100%;
+      width:100% ;
+      background-color: #1B1E20;
+      transition: 0.5s all;
+      transform: ${props => props.active ? "translateX(-100%)" : "translateX(0%)"};
+    }
+`;
 
 export default hot(module)(App);

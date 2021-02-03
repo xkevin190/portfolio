@@ -8,21 +8,41 @@ import { Bag } from '@styled-icons/ionicons-outline/Bag'
 import { Book } from '@styled-icons/bootstrap/Book'
 import { CloudDownload } from '@styled-icons/boxicons-regular/CloudDownload'
 
-const Menu = ({ children }) => (
+const Menu = ({ children, setMenuOptions, button }) => (
   <>
     <Top>
       {/* <Language id='icon-menu' /> */}
     </Top>
 
     <Container>
-      <Person id='icon-menu' />
-      <Book id='icon-menu' />
-      <Tools id='icon-menu' />
-      <Bag id='icon-menu' />
-      <Phone id='icon-menu' />
+      <Person id='icon-menu'
+        className={`${button === 1 ? 'icon-active' : ''}`}
+        active={button === 1 ? true : false}
+        onClick={() => setMenuOptions(1)}
+      />
+      <Book id='icon-menu'
+        className={`${button === 2 ? 'icon-active' : ''}`}
+        active={button === 2 ? true : false}
+        onClick={() => setMenuOptions(2)}
+      />
+      <Tools id='icon-menu'
+        className={`${button === 3 ? 'icon-active' : ''}`}
+        active={button === 3 ? true : false}
+        onClick={() => setMenuOptions(3)}
+      />
+      <Bag id='icon-menu'
+        className={`${button === 4 ? 'icon-active' : ''}`}
+        active={button === 4 ? true : false}
+        onClick={() => setMenuOptions(4)}
+      />
+      <Phone id='icon-menu'
+        className={`${button === 5 ? 'icon-active' : ''}`}
+        active={button === 5 ? true : false}
+        onClick={() => setMenuOptions(5)}
+      />
     </Container>
     <Down>
-       <CloudDownload id='icon-menu'/>
+      <CloudDownload id='icon-menu' />
     </Down>
   </>
 );
@@ -35,14 +55,19 @@ const Container = styled.div`
   align-items: center;
   flex-direction: column;
 
+  
   #icon-menu { 
     width:30px;
     padding:20px;
-    color:#8A8A8A;
+    color:#8A8A8A; 
 
     &:hover{
       color:#029264
     }
+  }
+
+  .icon-active {
+    color:#029264 !important;
   }
 `
 
