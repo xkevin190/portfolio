@@ -6,6 +6,11 @@ const reactLogo = require("./../assets/img/niko_img.jpg");
 import { Twitter } from '@styled-icons/bootstrap/Twitter'
 import { Github } from '@styled-icons/bootstrap/Github'
 import { LinkedinSquare } from '@styled-icons/boxicons-logos/LinkedinSquare'
+
+const img = require('../assets/img/1612410527606.jpg').default
+const audio = require('../assets/audio.mp3').default
+console.log(audio)
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -13,6 +18,9 @@ class App extends React.Component {
       active: true,
       button: 1
     };
+
+    this.audio = new Audio(audio);
+
   }
 
   componentDidMount = () => {
@@ -25,7 +33,8 @@ class App extends React.Component {
 
 
   setMenuOptions = (num) => {
-    console.log('in the funcion', num);
+    
+    this.audio.play()
     this.setState({
       button: num,
       active: true
@@ -104,7 +113,8 @@ const MenuBar = styled.div`
 
 const CardInfo = styled.div`
     flex:1.5;
-    background-image: url('https://n.foxdsgn.com/niko/black/wp-content/uploads/sites/4/2019/03/niko_img.jpg');
+    background-image: url(${img});
+    background-size: 100% 100%;
     height:85vh;
     z-index:30;
     box-shadow: 0px 3px 17px -4px rgba(0,0,0,0.75);
@@ -112,7 +122,7 @@ const CardInfo = styled.div`
     align-items:flex-end;
 
       #conten-profile{
-        height:25vh;
+        height:20vh;
         z-index:50;
         width:100%;
         justify-content:space-evenly;
@@ -127,7 +137,7 @@ const CardInfo = styled.div`
       }
 
       #subtitle {
-        color:#00C483;
+        color:#0091ea;
         font-size:20px
       }
 

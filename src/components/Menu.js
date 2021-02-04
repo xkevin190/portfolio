@@ -8,12 +8,10 @@ import { Bag } from '@styled-icons/ionicons-outline/Bag'
 import { Book } from '@styled-icons/bootstrap/Book'
 import { CloudDownload } from '@styled-icons/boxicons-regular/CloudDownload'
 
+const img = require('../assets/img/1612410527606.jpg')
 const Menu = ({ children, setMenuOptions, button }) => (
   <>
-    <Top>
-      {/* <Language id='icon-menu' /> */}
-    </Top>
-
+    <Top/>
     <Container>
       <Person id='icon-menu'
         className={`${button === 1 ? 'icon-active' : ''}`}
@@ -60,19 +58,20 @@ const Container = styled.div`
     width:30px;
     padding:20px;
     color:#8A8A8A; 
+    cursor: pointer;
 
     &:hover{
-      color:#029264
+      color:#0091ea
     }
   }
 
   .icon-active {
-    color:#029264 !important;
+    color:#0091ea !important;
   }
 `
 
 const Top = styled.div`
-  background-color:#00B479;
+  background-color:#0091ea;
   flex:0.3;
   width:100%;
   display:flex;
@@ -92,10 +91,11 @@ const Down = styled.div`
   #icon-menu { 
     width:33px;
     padding:20px;
+    cursor: pointer;
     color:#8A8A8A;
 
     &:hover{
-      color:#029264
+      color:#0091ea
     }
   }
 `
