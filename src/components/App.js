@@ -6,9 +6,9 @@ import { Twitter } from '@styled-icons/bootstrap/Twitter'
 import { Github } from '@styled-icons/bootstrap/Github'
 import { LinkedinSquare } from '@styled-icons/boxicons-logos/LinkedinSquare'
 
-// const img = require('../assets/img/1612410527606.jpg').default
-// const audio = require('../assets/audio.mp3').default
-// console.log(audio)
+const img = require('../assets/img/1612410527606.jpg').default
+const audio = require('../assets/audio.mp3').default
+console.log(audio)
 
 class App extends React.Component {
   constructor(props) {
@@ -18,7 +18,7 @@ class App extends React.Component {
       button: 1
     };
 
-    // this.audio = new Audio(audio);
+     this.audio = new Audio(audio);
 
   }
 
@@ -33,7 +33,7 @@ class App extends React.Component {
 
   setMenuOptions = (num) => {
 
-    // this.audio.play()
+    this.audio.play()
     this.setState({
       button: num,
       active: true
@@ -110,7 +110,7 @@ const MenuBar = styled.div`
 
 const CardInfo = styled.div`
     flex:1.5;
-   
+    background-image: url(${img});
     background-size: 100% 100%;
     height:85vh;
     z-index:30;
