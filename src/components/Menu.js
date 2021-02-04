@@ -8,7 +8,6 @@ import { Bag } from '@styled-icons/ionicons-outline/Bag'
 import { Book } from '@styled-icons/bootstrap/Book'
 import { CloudDownload } from '@styled-icons/boxicons-regular/CloudDownload'
 
-const img = require('../assets/img/1612410527606.jpg')
 const Menu = ({ children, setMenuOptions, button }) => (
   <>
     <Top/>
@@ -78,7 +77,7 @@ const Top = styled.div`
   align-items:center;
   justify-content:center;
   }
-`;
+`
 
 const Down = styled.div`
   
