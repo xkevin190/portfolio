@@ -5,7 +5,7 @@ import Menu from './Menu'
 import { Twitter } from '@styled-icons/bootstrap/Twitter'
 import { Github } from '@styled-icons/bootstrap/Github'
 import { LinkedinSquare } from '@styled-icons/boxicons-logos/LinkedinSquare'
-
+import BodyComponent from './BodyComponent'
 const img = require('../assets/img/1612410527606.jpg').default
 const audio = require('../assets/audio.mp3').default
 console.log(audio)
@@ -18,7 +18,7 @@ class App extends React.Component {
       button: 1
     };
 
-     this.audio = new Audio(audio);
+    this.audio = new Audio(audio);
 
   }
 
@@ -63,16 +63,17 @@ class App extends React.Component {
             <span id='title'>Kevin Velasco</span>
             <span id='subtitle'>Developer</span>
             <div id="social-media">
-              <a href="#"><Twitter width={30} /></a>
-              <a href="#"><Github width={30} /></a>
-              <a href="#"><LinkedinSquare width={30} /></a>
+              <a target="_blank" href="https://twitter.com/xkevin190"><Twitter width={30} /></a>
+              <a target="_blank" href="https://github.com/xkevin190"><Github width={30} /></a>
+              <a target="_blank" href="https://www.linkedin.com/in/kevin-velasco-059147115/"><LinkedinSquare width={30} /></a>
             </div>
           </div>
         </CardInfo>
         <BodyCard active={this.state.active} >
           <div id="inside-body">
-            hello word
+            <BodyComponent />
           </div>
+
         </BodyCard>
         <div style={{
           background: '#0A0000',
@@ -154,6 +155,8 @@ const BodyCard = styled.div`
     #inside-body {
       height:100%;
       width:100% ;
+      overflow:scroll;
+      display:flex;
       background-color: #1B1E20;
       transition: 0.5s all;
       transform: ${props => props.active ? "translateX(-100%)" : "translateX(0%)"};

@@ -13,27 +13,27 @@ const Menu = ({ children, setMenuOptions, button }) => (
     <Top/>
     <Container>
       <Person id='icon-menu'
-        className={`${button === 1 ? 'icon-active' : ''}`}
+        className={`${button === 1 && 'icon-active' }`}
         active={button === 1 ? true : false}
         onClick={() => setMenuOptions(1)}
       />
       <Book id='icon-menu'
-        className={`${button === 2 ? 'icon-active' : ''}`}
+        className={`${button === 2 && 'icon-active'}`}
         active={button === 2 ? true : false}
         onClick={() => setMenuOptions(2)}
       />
       <Tools id='icon-menu'
-        className={`${button === 3 ? 'icon-active' : ''}`}
+        className={`${button === 3 && 'icon-active' }`}
         active={button === 3 ? true : false}
         onClick={() => setMenuOptions(3)}
       />
       <Bag id='icon-menu'
-        className={`${button === 4 ? 'icon-active' : ''}`}
+        className={`${button === 4 && 'icon-active' }`}
         active={button === 4 ? true : false}
         onClick={() => setMenuOptions(4)}
       />
       <Phone id='icon-menu'
-        className={`${button === 5 ? 'icon-active' : ''}`}
+        className={`${button === 5 && 'icon-active' }`}
         active={button === 5 ? true : false}
         onClick={() => setMenuOptions(5)}
       />
